@@ -3,11 +3,14 @@ package com.app.recargasc.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "operador")
 public class Operador {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_operador;
 
     @Column(nullable = false)

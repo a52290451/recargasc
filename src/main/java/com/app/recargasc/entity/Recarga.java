@@ -11,17 +11,19 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "recarga")
 public class Recarga {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_recarga;
+
     private LocalDateTime fecha;
     private int monto;
     private boolean estado;
     private Long telefono;
 
-    @ManyToOne
-    @JoinColumn(name = "idOperador")
-    private Operador idOperador;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_operador")
+    private Operador id_operador;
 
     @ManyToOne
     @JoinColumn(name = "cedula")
@@ -55,12 +57,12 @@ public class Recarga {
         this.monto = monto;
     }
 
-    public Operador getIdOperador() {
-        return idOperador;
+    public Operador getId_operador() {
+        return id_operador;
     }
 
-    public void setIdOperador(Operador idOperador) {
-        this.idOperador = idOperador;
+    public void setId_operador(Operador id_operador) {
+        this.id_operador = id_operador;
     }
 
     public Usuario getId_usuario() {

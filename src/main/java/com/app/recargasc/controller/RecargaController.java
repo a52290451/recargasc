@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping(path = "api/v1/recarga")
 public class RecargaController {
@@ -36,5 +37,10 @@ public class RecargaController {
     @GetMapping("/{idRecarga}")
     public Optional<Recarga> getById(@PathVariable("idRecarga") Long idRecarga){
         return recargaService.getRecarga(idRecarga);
+    }
+
+    @GetMapping("/{idOperador}")
+    public Long getTotalOperador(@PathVariable("idOperador") Long idOperador){
+        return recargaService.countByOperadorId(idOperador);
     }
 }
