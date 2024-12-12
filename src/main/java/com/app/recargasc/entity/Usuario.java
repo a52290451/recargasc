@@ -5,9 +5,13 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "usuario")
 public class Usuario{
+
+
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long cedula;
+
     private String nombre_usuario;
     private int telefono;
 

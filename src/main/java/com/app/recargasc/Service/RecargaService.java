@@ -17,6 +17,11 @@ public class RecargaService {
         return recargaRepository.findAll();
     }
 
+    // Método para contar el número de recargas por operador
+    public Long countByOperadorId(Long operadorId) {
+        return recargaRepository.countByOperadorId(operadorId);
+    }
+
     public Optional<Recarga> getRecarga(Long id){
         return recargaRepository.findById(id);
     }
