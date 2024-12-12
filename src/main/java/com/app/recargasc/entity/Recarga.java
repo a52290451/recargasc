@@ -23,15 +23,17 @@ public class Recarga {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_operador")
-    private Operador id_operador;
+    private Operador operador;
 
     @ManyToOne
     @JoinColumn(name = "cedula")
-    private Usuario id_usuario;
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "id_ven")
-    private Vendedor id_ven;
+    private Vendedor vendedor;
+
+    public Recarga() {}
 
     public Long getId_recarga() {
         return id_recarga;
@@ -57,28 +59,28 @@ public class Recarga {
         this.monto = monto;
     }
 
-    public Operador getId_operador() {
-        return id_operador;
+    public Operador getOperador() {
+        return operador;
     }
 
-    public void setId_operador(Operador id_operador) {
-        this.id_operador = id_operador;
+    public void setOperador(Operador operador) {
+        this.operador = operador;
     }
 
-    public Usuario getId_usuario() {
-        return id_usuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setId_usuario(Usuario id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public Vendedor getId_ven() {
-        return id_ven;
+    public Vendedor getVendedor() {
+        return vendedor;
     }
 
-    public void setId_ven(Vendedor id_ven) {
-        this.id_ven = id_ven;
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
     }
 
     public boolean isEstado() {

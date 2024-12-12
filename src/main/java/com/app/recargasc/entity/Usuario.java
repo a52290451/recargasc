@@ -15,6 +15,12 @@ public class Usuario{
     private String nombre_usuario;
     private int telefono;
 
+    public Usuario() {}
+
+    public Usuario(Long cedula) {
+        this.cedula = cedula;
+    }
+
     public Long getCedula() {
         return cedula;
     }

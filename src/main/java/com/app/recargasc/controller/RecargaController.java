@@ -2,9 +2,12 @@ package com.app.recargasc.controller;
 
 import com.app.recargasc.Service.OperadorService;
 import com.app.recargasc.Service.RecargaService;
+import com.app.recargasc.dto.RecargaDTO;
+import com.app.recargasc.dto.RecargaSumaDTO;
 import com.app.recargasc.entity.Operador;
 import com.app.recargasc.entity.Recarga;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,14 +22,16 @@ public class RecargaController {
     @Autowired
     private RecargaService recargaService;
 
+
     @GetMapping
-    public List<Recarga> getAll(){
-        return recargaService.getRecargas();
+    public ResponseEntity<List<RecargaDTO>> getAll() {
+        List<RecargaDTO> recargas = recargaService.getRecargas();
+        return ResponseEntity.ok(recargas);
     }
 
     @PostMapping
-    public void update(@RequestBody Recarga recarga){
-        recargaService.updateRecarga(recarga);
+    public void update(@RequestBody RecargaDTO recargaDTO) {
+        recargaService.updateRecarga(recargaDTO);
     }
 
     @DeleteMapping("/{idRecarga}")
@@ -39,8 +44,8 @@ public class RecargaController {
         return recargaService.getRecarga(idRecarga);
     }
 
-    @GetMapping("/{idOperador}")
-    public Long getTotalOperador(@PathVariable("idOperador") Long idOperador){
-        return recargaService.countByOperadorId(idOperador);
+    @GetMapping("/totales")
+    public List<RecargaSumaDTO> getTotalOperador(){
+        return recargaService.countByOperadorId();
     }
 }
