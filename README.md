@@ -24,3 +24,7 @@ MySql: Instalada y configurada.
 ```bash
 git clone https://github.com/a52290451/recargasc.git
 ```
+
+## Modelo de datos
+
+![image](https://github.com/user-attachments/assets/e5a9c475-6935-4a28-b578-19515fee8b81)
