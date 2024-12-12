@@ -5,12 +5,16 @@
 ## Tecnologías Utilizadas
 
 **Spring Boot:** Framework para desarrollo de aplicaciones Java.
+
 **Spring Data JPA:** Para interactuar con la base de datos.
+
 **MySql:** Para el manejo de bases de datos
 
 ## Requisitos Previos
 Java: 17
+
 Maven: Para gestionar las dependencias.
+
 MySql: Instalada y configurada.
 
 ## Instalación
