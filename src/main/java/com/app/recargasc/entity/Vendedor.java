@@ -6,20 +6,20 @@ import jakarta.persistence.*;
 @Table(name = "vendedor")
 public class Vendedor {
 
-    // Constructor that accepts an int
-    public Vendedor(Long id) {
-        this.id_ven = id;
-    }
-
     // Default constructor (if required)
-    public Vendedor() {
-    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_ven;
     private String nombre_vendedor;
     private String direccion;
+
+    public Vendedor() {}
+
+    public Vendedor(Long id_ven) {
+        this.id_ven = id_ven;
+    }
 
     public Long getId_ven() {
         return id_ven;

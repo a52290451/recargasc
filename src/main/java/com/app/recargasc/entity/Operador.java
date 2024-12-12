@@ -3,8 +3,6 @@ package com.app.recargasc.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
-
 @Entity
 @Table(name = "operador")
 public class Operador {
@@ -18,6 +16,13 @@ public class Operador {
 
     @Column(nullable = false)
     private String tipo_operador;
+
+    public Operador() {}
+
+    public Operador(Long idOperador) {
+        this.id_operador = idOperador;
+    }
+
 
     // Getter for id_operador
     public Long getId_operador() {
